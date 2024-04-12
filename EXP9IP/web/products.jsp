@@ -1,8 +1,3 @@
-<%-- 
-    Document   : products.jsp
-    Created on : 07-Apr-2024, 8:52:11?am
-    Author     : DELL
---%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="product.Products" %>
@@ -22,6 +17,8 @@
             </tr>
         </thead>
         <tbody>
+          
+            
             <c:forEach var="product" items="${products}">
                 <tr>
                     <td>${product.name}</td>
@@ -31,7 +28,6 @@
             </c:forEach>
         </tbody>
     </table>
-    <%-- Java code to create and sort products list --%>
     <%
         java.util.ArrayList<product.Products> productsList = new java.util.ArrayList<>();
         productsList.add(new product.Products("Product 1", 10.99, "Yes"));
@@ -47,7 +43,6 @@
             });
         }
 
-        // Set the sorted or unsorted list in request attribute for JSTL
         pageContext.setAttribute("products", productsList);
     %>
 </body>
